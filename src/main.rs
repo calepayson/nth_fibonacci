@@ -1,7 +1,7 @@
 use std::io;
 
 fn main() {
-    println!("N: ");
+    println!("n: ");
 
     let mut n = String::new();
 
@@ -9,5 +9,10 @@ fn main() {
         .read_line(&mut n)
         .expect("Failed to read line");
 
-    println!("n = {n}");
+    let n: u32 = n
+        .trim()
+        .parse()
+        .expect("Please input a number");
+
+    println!("n * 2 = {}", n * 2);
 }
